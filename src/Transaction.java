@@ -25,20 +25,21 @@ public class Transaction {
 
         if (WhatWouldYouLikeToDo.equalsIgnoreCase("check my balance")) {
             System.out.println("Your balance is $100");
-        } else if (!WhatWouldYouLikeToDo.equalsIgnoreCase("withdraw fund")) {
+
+        } else if (WhatWouldYouLikeToDo.equalsIgnoreCase("withdraw fund")) {
             System.out.println("How much do you want to withdraw");
             amount = ATM.scanner.nextInt();
             if (amount > 100) {
                 throw new Exception("Insufficient Funds");
             }
-            else if (amount < 100) {
+            else if (amount <= 100) {
                 System.out.println("Available Balance" + (100 - amount) + " Take cash below. Have a nice day ");
             }
             System.out.println("$" + amount);
 
 
             }
-            if (WhatWouldYouLikeToDo.equalsIgnoreCase("cancel")) {
+            else if (WhatWouldYouLikeToDo.equalsIgnoreCase("cancel")) {
                 System.out.println(" Thank you please come again...");
             }
         }
